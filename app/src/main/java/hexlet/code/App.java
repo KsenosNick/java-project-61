@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Please enter the game number and press Enter.");
         System.out.println("""
                 Please enter the game number and press Enter.
                 1 - Greet
@@ -19,6 +18,9 @@ public class App {
             case 1:
                 Cli.getByName();
                 break;
+            case 2:
+                Evenness.checkForEvenness();
+                break;
             case 0:
                 System.out.println("You're out of brain games");
                 break;
@@ -26,5 +28,7 @@ public class App {
                 System.out.println("Enter the game number from the suggested list");
 
         }
+
+        scanner.close();
     }
 }
