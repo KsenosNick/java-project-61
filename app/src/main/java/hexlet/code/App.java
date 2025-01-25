@@ -8,6 +8,7 @@ public class App {
                 Please enter the game number and press Enter.
                 1 - Greet
                 2 - Even
+                3 - Calc
                 0 - Exit
                 """);
         Scanner scanner = new Scanner(System.in);
@@ -20,6 +21,9 @@ public class App {
                 break;
             case 2:
                 Evenness.checkForEvenness();
+                break;
+            case 3:
+                Calculator.calculate();
                 break;
             case 0:
                 System.out.println("You're out of brain games");
