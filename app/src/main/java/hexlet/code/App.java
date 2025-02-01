@@ -2,13 +2,10 @@ package hexlet.code;
 
 import hexlet.code.games.Calculator;
 import hexlet.code.games.Evenness;
-
-import java.util.Random;
 import java.util.Scanner;
 
 public class App {
     public static Scanner scanner = new Scanner(System.in);
-    public static Random numberGenerator = new Random();
 
     public static void main(String[] args) {
         System.out.println("""
@@ -27,10 +24,10 @@ public class App {
                 Engine.getByName();
                 break;
             case 2:
-                Evenness.checkForEvenness();
+                Evenness.startGame();
                 break;
             case 3:
-                Calculator.calculate();
+                Calculator.startGame();
                 break;
             case 0:
                 System.out.println("You're out of brain games");
