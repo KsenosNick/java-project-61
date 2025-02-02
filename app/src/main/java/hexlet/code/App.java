@@ -2,6 +2,8 @@ package hexlet.code;
 
 import hexlet.code.games.Calculator;
 import hexlet.code.games.Evenness;
+import hexlet.code.games.GCD;
+
 import java.util.Scanner;
 
 public class App {
@@ -13,6 +15,7 @@ public class App {
                 1 - Greet
                 2 - Even
                 3 - Calc
+                4 - GCD
                 0 - Exit
                 """);
 
@@ -28,6 +31,9 @@ public class App {
                 break;
             case 3:
                 Calculator.startGame();
+                break;
+            case 4:
+                GCD.startGame();
                 break;
             case 0:
                 System.out.println("You're out of brain games");
