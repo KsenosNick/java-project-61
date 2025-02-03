@@ -6,10 +6,9 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
-import java.util.Scanner;
+import static hexlet.code.Utils.userInput;
 
 public class App {
-    public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         System.out.println("""
@@ -23,7 +22,7 @@ public class App {
                 0 - Exit
                 """);
 
-        String choice = scanner.nextLine();
+        String choice = userInput();
         System.out.println("Your choice: " + choice);
 
         switch (choice) {
@@ -51,7 +50,5 @@ public class App {
             default:
                 System.out.println("Enter the game number from the suggested list");
         }
-
-        scanner.close();
     }
 }

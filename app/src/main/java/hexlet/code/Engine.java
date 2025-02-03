@@ -1,6 +1,6 @@
 package hexlet.code;
 
-import static hexlet.code.App.scanner;
+import static hexlet.code.Utils.userInput;
 
 public class Engine {
     public static final int GAME_ROUNDS_COUNT = 3;
@@ -17,7 +17,7 @@ public class Engine {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
 
-        userName = scanner.nextLine();
+        userName = userInput();
 
         System.out.println("Hello, " + userName + "!");
     }
@@ -26,7 +26,7 @@ public class Engine {
         for (int i = 0; i < GAME_ROUNDS_COUNT; i++) {
             System.out.println("Question: " + GAME_DATA[0][i]);
             System.out.print("Your answer: ");
-            String userAnswer = scanner.nextLine();
+            String userAnswer = userInput();
             String rightAnswer = GAME_DATA[1][i];
 
             if (isRight(userAnswer, rightAnswer)) {
