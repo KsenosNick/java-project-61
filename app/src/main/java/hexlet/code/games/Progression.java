@@ -9,6 +9,8 @@ import static hexlet.code.Utils.generateNumber;
 public class Progression {
 
     private static final int MAX_NUMBER = 100;
+    private static final int MIN_ADDED_NUMBER = 1;
+    private static final int MAX_ADDED_NUMBER = 10;
     private static final String GAME_START_MESSAGE = "What number is missing in the progression?";
     private static final int PROGRESSION_LENGTH = 10;
 
@@ -32,10 +34,8 @@ public class Progression {
 
     private static String generateProgression() {
         StringBuilder progression = new StringBuilder();
-        int minAddedNumber = 1;
-        int maxAddedNumber = 10;
         int initialNumber = generateNumber(MAX_NUMBER);
-        int addedNumber = generateNumber(minAddedNumber, maxAddedNumber);
+        int addedNumber = generateNumber(MIN_ADDED_NUMBER, MAX_ADDED_NUMBER);
 
         for (int i = 0; i < PROGRESSION_LENGTH; i++) {
             progression.append(initialNumber).append(" ");

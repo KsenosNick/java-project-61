@@ -22,29 +22,29 @@ public class App {
                 0 - Exit
                 """);
 
-        int choice = scanner.nextInt();
+        String choice = scanner.nextLine();
         System.out.println("Your choice: " + choice);
 
         switch (choice) {
-            case 1:
+            case "1":
                 Engine.getByName();
                 break;
-            case 2:
+            case "2":
                 Evenness.startGame();
                 break;
-            case 3:
+            case "3":
                 Calculator.startGame();
                 break;
-            case 4:
+            case "4":
                 GCD.startGame();
                 break;
-            case 5:
+            case "5":
                 Progression.startGame();
                 break;
-            case 6:
+            case "6":
                 Prime.startGame();
                 break;
-            case 0:
+            case "0":
                 System.out.println("You're out of brain games");
                 break;
             default:
