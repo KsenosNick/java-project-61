@@ -9,6 +9,7 @@ import static hexlet.code.Utils.generateNumber;
 public class Prime {
     private static final int MAX_NUMBER = 1000;
     private static final String GAME_START_MESSAGE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static final int MIN_CHECK_NUMBER = 3;
 
     public static void startGame() {
         generateGameData();
@@ -39,7 +40,7 @@ public class Prime {
             return false;
         }
 
-        for (int i = 3; i <= Math.sqrt(number); i++) {
+        for (int i = MIN_CHECK_NUMBER; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
                 return false;
             }

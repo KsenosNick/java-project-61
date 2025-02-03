@@ -4,14 +4,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Utils {
-    private static final Random numberGenerator = new Random();
+    private static final Random NUMBER_GENERATOR = new Random();
 
     public static int generateNumber(int maxNumber) {
-        return numberGenerator.nextInt(maxNumber);
+        return NUMBER_GENERATOR.nextInt(maxNumber);
     }
 
     public static int generateNumber(int minNumber, int maxNumber) {
-        return numberGenerator.nextInt(maxNumber - minNumber + 1) + minNumber;
+        return NUMBER_GENERATOR.nextInt(maxNumber - minNumber + 1) + minNumber;
     }
 
     public static String userInput() {
