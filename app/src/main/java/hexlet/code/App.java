@@ -4,6 +4,7 @@ import hexlet.code.games.Calculator;
 import hexlet.code.games.Evenness;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
@@ -39,6 +40,9 @@ public class App {
                 break;
             case 5:
                 Progression.startGame();
+                break;
+            case 6:
+                Prime.startGame();
                 break;
             case 0:
                 System.out.println("You're out of brain games");
