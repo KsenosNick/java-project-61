@@ -16,7 +16,6 @@ public class Evenness {
     }
 
     public static void generateGameData() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         for (int i = 0; i < GAME_ROUNDS_COUNT; i++) {
             int number = generateNumber(MAX_NUMBER);

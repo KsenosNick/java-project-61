@@ -17,7 +17,6 @@ public class Calculator {
     }
 
     public static void generateGameData() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         String[] operations = {"+", "-", "*"};
 
         for (int i = 0; i < GAME_ROUNDS_COUNT; i++) {
