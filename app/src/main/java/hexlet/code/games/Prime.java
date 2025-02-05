@@ -22,21 +22,14 @@ public class Prime {
 
             String questionData = Integer.toString(number);
             String rightAnswerData = isPrime(number) ? "yes" : "no";
-
             GAME_DATA[0][i] = questionData;
             GAME_DATA[1][i] = rightAnswerData;
         }
     }
 
     private static boolean isPrime(int number) {
-        if (number <= 1) {
-            return false;
-        }
-        if (number == 2) {
-            return true;
-        }
-        if (number % 2 == 0) {
-            return false;
+        if (number <= 1 || number % 2 == 0) {
+            return number == 2;
         }
 
         for (int i = MIN_CHECK_NUMBER; i <= Math.sqrt(number); i++) {
