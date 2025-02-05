@@ -38,16 +38,11 @@ public class GCD {
     private static int getGcd(int firstNumber, int secondNumber) {
         int max = Math.max(firstNumber, secondNumber);
         int min = Math.min(firstNumber, secondNumber);
-        int gcd = secondNumber;
         int divRemainder = max % min;
 
-        while (divRemainder != 0) {
-            max = min;
-            min = divRemainder;
-            gcd = min;
-            divRemainder = max % min;
+        if (divRemainder == 0) {
+            return min;
         }
-
-        return gcd;
+        return getGcd(min, divRemainder);
     }
 }
