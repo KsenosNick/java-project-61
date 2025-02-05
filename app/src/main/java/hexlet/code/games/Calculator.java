@@ -1,8 +1,6 @@
 package hexlet.code.games;
 
 import static hexlet.code.Engine.GAME_ROUNDS_COUNT;
-import static hexlet.code.Engine.setGameDataRightAnswer;
-import static hexlet.code.Engine.setGameDataQuestion;
 import static hexlet.code.Engine.initialize;
 import static hexlet.code.Utils.generateNumber;
 
@@ -10,10 +8,11 @@ import static hexlet.code.Utils.generateNumber;
 public class Calculator {
     private static final int MAX_NUMBER = 100;
     private static final String GAME_START_MESSAGE = "What is the result of the expression?";
+    private static final String[][] GAME_DATA = new String[2][GAME_ROUNDS_COUNT];
 
     public static void startGame() {
         generateGameData();
-        initialize(GAME_START_MESSAGE);
+        initialize(GAME_START_MESSAGE, GAME_DATA);
     }
 
     public static void generateGameData() {
@@ -28,8 +27,8 @@ public class Calculator {
             String questionData = String.format("%d %s %d", firstNumber, operation, secondNumber);
             String rightAnswerData = Integer.toString(calculate(firstNumber, operation, secondNumber));
 
-            setGameDataQuestion(questionData, i);
-            setGameDataRightAnswer(rightAnswerData, i);
+            GAME_DATA[0][i] = questionData;
+            GAME_DATA[1][i] = rightAnswerData;
         }
     }
 

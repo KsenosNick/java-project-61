@@ -1,8 +1,6 @@
 package hexlet.code.games;
 
 import static hexlet.code.Engine.GAME_ROUNDS_COUNT;
-import static hexlet.code.Engine.setGameDataRightAnswer;
-import static hexlet.code.Engine.setGameDataQuestion;
 import static hexlet.code.Engine.initialize;
 import static hexlet.code.Utils.generateNumber;
 
@@ -10,10 +8,11 @@ public class Prime {
     private static final int MAX_NUMBER = 1000;
     private static final String GAME_START_MESSAGE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private static final int MIN_CHECK_NUMBER = 3;
+    private static final String[][] GAME_DATA = new String[2][GAME_ROUNDS_COUNT];
 
     public static void startGame() {
         generateGameData();
-        initialize(GAME_START_MESSAGE);
+        initialize(GAME_START_MESSAGE, GAME_DATA);
     }
 
     public static void generateGameData() {
@@ -24,8 +23,8 @@ public class Prime {
             String questionData = Integer.toString(number);
             String rightAnswerData = isPrime(number) ? "yes" : "no";
 
-            setGameDataQuestion(questionData, i);
-            setGameDataRightAnswer(rightAnswerData, i);
+            GAME_DATA[0][i] = questionData;
+            GAME_DATA[1][i] = rightAnswerData;
         }
     }
 

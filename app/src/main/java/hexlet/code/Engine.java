@@ -7,10 +7,10 @@ public class Engine {
     private static String userName;
     private static final String[][] GAME_DATA = new String[2][GAME_ROUNDS_COUNT];
 
-    public static void initialize(String gameStartMessage) {
+    public static void initialize(String gameStartMessage, String[][] gameData) {
         getByName();
         System.out.println(gameStartMessage);
-        processGameData();
+        processGameData(gameData);
     }
 
     public static void getByName() {
@@ -22,12 +22,12 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
     }
 
-    public static void processGameData() {
+    public static void processGameData(String[][] gameData) {
         for (int i = 0; i < GAME_ROUNDS_COUNT; i++) {
-            System.out.println("Question: " + GAME_DATA[0][i]);
+            System.out.println("Question: " + gameData[0][i]);
             System.out.print("Your answer: ");
             String userAnswer = userInput();
-            String rightAnswer = GAME_DATA[1][i];
+            String rightAnswer = gameData[1][i];
 
             if (isRight(userAnswer, rightAnswer)) {
                 System.out.println("Correct!");
@@ -46,13 +46,5 @@ public class Engine {
 
     private static boolean isRight(String userAnswer, String rightAnswer) {
         return userAnswer.equalsIgnoreCase(rightAnswer);
-    }
-
-    public static void setGameDataQuestion(String questionData, int round) {
-        GAME_DATA[0][round] = questionData;
-    }
-
-    public static void setGameDataRightAnswer(String answerData, int round) {
-        GAME_DATA[1][round] = answerData;
     }
 }

@@ -1,8 +1,6 @@
 package hexlet.code.games;
 
 import static hexlet.code.Engine.GAME_ROUNDS_COUNT;
-import static hexlet.code.Engine.setGameDataRightAnswer;
-import static hexlet.code.Engine.setGameDataQuestion;
 import static hexlet.code.Engine.initialize;
 import static hexlet.code.Utils.generateNumber;
 
@@ -13,10 +11,11 @@ public class Progression {
     private static final int MAX_ADDED_NUMBER = 10;
     private static final String GAME_START_MESSAGE = "What number is missing in the progression?";
     private static final int PROGRESSION_LENGTH = 10;
+    private static final String[][] GAME_DATA = new String[2][GAME_ROUNDS_COUNT];
 
     public static void startGame() {
         generateGameData();
-        initialize(GAME_START_MESSAGE);
+        initialize(GAME_START_MESSAGE, GAME_DATA);
     }
 
     public static void generateGameData() {
@@ -27,8 +26,8 @@ public class Progression {
             String questionData = hideElement(progression, index);
             String rightAnswerData = getHidedElement(progression, index);
 
-            setGameDataQuestion(questionData, i);
-            setGameDataRightAnswer(rightAnswerData, i);
+            GAME_DATA[0][i] = questionData;
+            GAME_DATA[1][i] = rightAnswerData;
         }
     }
 
