@@ -6,7 +6,7 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
-import static hexlet.code.Utils.userInput;
+import static hexlet.code.Engine.userInput;
 
 public class App {
 

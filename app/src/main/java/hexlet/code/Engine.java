@@ -1,6 +1,6 @@
 package hexlet.code;
 
-import static hexlet.code.Utils.userInput;
+import java.util.Scanner;
 
 public class Engine {
     public static final int GAME_ROUNDS_COUNT = 3;
@@ -46,5 +46,10 @@ public class Engine {
 
     private static boolean isRight(String userAnswer, String rightAnswer) {
         return userAnswer.equalsIgnoreCase(rightAnswer);
+    }
+
+    public static String userInput() {
+        Scanner userInput = new Scanner(System.in);
+        return userInput.nextLine();
     }
 }
