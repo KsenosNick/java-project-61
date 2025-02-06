@@ -6,6 +6,7 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
+import static hexlet.code.Engine.closeScanner;
 import static hexlet.code.Engine.userInput;
 
 public class App {
@@ -50,5 +51,7 @@ public class App {
             default:
                 System.out.println("Enter the game number from the suggested list");
         }
+
+        closeScanner();
     }
 }

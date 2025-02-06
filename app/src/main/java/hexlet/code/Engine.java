@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Engine {
     public static final int GAME_ROUNDS_COUNT = 3;
     private static String userName;
-    private static final String[][] GAME_DATA = new String[2][GAME_ROUNDS_COUNT];
+    private static final Scanner USER_INPUT = new Scanner(System.in);
 
     public static void initialize(String gameStartMessage, String[][] gameData) {
         getByName();
@@ -49,7 +49,10 @@ public class Engine {
     }
 
     public static String userInput() {
-        Scanner userInput = new Scanner(System.in);
-        return userInput.nextLine();
+        return USER_INPUT.nextLine();
+    }
+
+    public static void closeScanner() {
+        USER_INPUT.close();
     }
 }
