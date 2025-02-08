@@ -2,12 +2,10 @@ package hexlet.code.games;
 
 import static hexlet.code.Engine.GAME_ROUNDS_COUNT;
 import static hexlet.code.Engine.initialize;
-import static hexlet.code.Utils.generateNumber;
+import static hexlet.code.RandomUtils.generateNumber;
 
 public class Prime {
-    private static final int MAX_NUMBER = 1000;
     private static final String GAME_START_MESSAGE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private static final int MIN_CHECK_NUMBER = 3;
     private static final String[][] GAME_DATA = new String[2][GAME_ROUNDS_COUNT];
 
     public static void startGame() {
@@ -18,7 +16,7 @@ public class Prime {
     public static void generateGameData() {
 
         for (int i = 0; i < GAME_ROUNDS_COUNT; i++) {
-            int number = generateNumber(MAX_NUMBER);
+            int number = generateNumber();
 
             String questionData = Integer.toString(number);
             String rightAnswerData = isPrime(number) ? "yes" : "no";
@@ -28,11 +26,12 @@ public class Prime {
     }
 
     private static boolean isPrime(int number) {
+        final int minCheckNumber = 3;
         if (number <= 1 || number % 2 == 0) {
             return number == 2;
         }
 
-        for (int i = MIN_CHECK_NUMBER; i <= Math.sqrt(number); i++) {
+        for (int i = minCheckNumber; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
                 return false;
             }

@@ -2,11 +2,9 @@ package hexlet.code.games;
 
 import static hexlet.code.Engine.GAME_ROUNDS_COUNT;
 import static hexlet.code.Engine.initialize;
-import static hexlet.code.Utils.generateNumber;
+import static hexlet.code.RandomUtils.generateNumber;
 
 public class GCD {
-    private static final int MIN_NUMBER = 1;
-    private static final int MAX_NUMBER = 1000;
     private static final String GAME_START_MESSAGE = "What is the result of the expression?";
     private static final String[][] GAME_DATA = new String[2][GAME_ROUNDS_COUNT];
 
@@ -19,8 +17,8 @@ public class GCD {
         System.out.println("Find the greatest common divisor of given numbers.");
 
         for (int i = 0; i < GAME_ROUNDS_COUNT; i++) {
-            int firstNumber = generateNumber(MIN_NUMBER, MAX_NUMBER);
-            int secondNumber = generateNumber(MIN_NUMBER, MAX_NUMBER);
+            int firstNumber = generateNumber();
+            int secondNumber = generateNumber();
 
             if (getGcd(firstNumber, secondNumber) == 1) {
                 i--;

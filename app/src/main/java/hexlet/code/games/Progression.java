@@ -1,16 +1,13 @@
 package hexlet.code.games;
 
+import static hexlet.code.AppConfig.PROGRESSION_LENGTH;
 import static hexlet.code.Engine.GAME_ROUNDS_COUNT;
 import static hexlet.code.Engine.initialize;
-import static hexlet.code.Utils.generateNumber;
+import static hexlet.code.RandomUtils.generateProgression;
+import static hexlet.code.RandomUtils.generateNumber;
 
 public class Progression {
-
-    private static final int MAX_NUMBER = 100;
-    private static final int MIN_ADDED_NUMBER = 1;
-    private static final int MAX_ADDED_NUMBER = 10;
     private static final String GAME_START_MESSAGE = "What number is missing in the progression?";
-    private static final int PROGRESSION_LENGTH = 10;
     private static final String[][] GAME_DATA = new String[2][GAME_ROUNDS_COUNT];
 
     public static void startGame() {
@@ -29,19 +26,6 @@ public class Progression {
             GAME_DATA[0][i] = questionData;
             GAME_DATA[1][i] = rightAnswerData;
         }
-    }
-
-    private static String generateProgression() {
-        StringBuilder progression = new StringBuilder();
-        int initialNumber = generateNumber(MAX_NUMBER);
-        int addedNumber = generateNumber(MIN_ADDED_NUMBER, MAX_ADDED_NUMBER);
-
-        for (int i = 0; i < PROGRESSION_LENGTH; i++) {
-            progression.append(initialNumber).append(" ");
-            initialNumber += addedNumber;
-        }
-
-        return progression.toString().trim();
     }
 
     private static String hideElement(String progression, int index) {

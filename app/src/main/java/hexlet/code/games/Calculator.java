@@ -2,11 +2,10 @@ package hexlet.code.games;
 
 import static hexlet.code.Engine.GAME_ROUNDS_COUNT;
 import static hexlet.code.Engine.initialize;
-import static hexlet.code.Utils.generateNumber;
+import static hexlet.code.RandomUtils.generateNumber;
 
 
 public class Calculator {
-    private static final int MAX_NUMBER = 100;
     private static final String GAME_START_MESSAGE = "What is the result of the expression?";
     private static final String[][] GAME_DATA = new String[2][GAME_ROUNDS_COUNT];
 
@@ -19,8 +18,8 @@ public class Calculator {
         String[] operations = {"+", "-", "*"};
 
         for (int i = 0; i < GAME_ROUNDS_COUNT; i++) {
-            int firstNumber = generateNumber(MAX_NUMBER);
-            int secondNumber = generateNumber(MAX_NUMBER);
+            int firstNumber = generateNumber();
+            int secondNumber = generateNumber();
             int operationIndex = generateNumber(operations.length);
             String operation = operations[operationIndex];
 
